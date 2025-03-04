@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect Page</title>
-
-    <!-- Redirects the user immediately to the specified URL -->
-    <meta http-equiv="refresh" content="0;url=https://https:https://now-gg.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_hist=true">
+    <title>Run JavaScript</title>
 </head>
 <body>
-    <h1>Redirecting...</h1>
+
+    <!-- Button that triggers the JavaScript function -->
+    <button onclick="runCustomJavaScript()">Run JavaScript</button>
+
+    <script>
+        // Custom JavaScript function that runs when the button is clicked
+        function runCustomJavaScript() {
+            var destination = "now.gg";
+            if (destination) {
+                // This redirects to Google Translate with the entered URL
+                window.location = 'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(destination);
+            } else {
+                alert("No URL entered");
+            }
+        }
+    </script>
+
 </body>
 </html>
