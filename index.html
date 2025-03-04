@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Run JavaScript</title>
+    <title>Open JavaScript in about:blank</title>
 </head>
-    	<style>
-		button {
+		<style>
+		.c-button {
 			min-width: 100%;
 			font-family: fantasy;
 			appearance: none;
@@ -20,16 +20,16 @@
 			cursor: pointer;
 		}
 
-		button:hover {
+		.c-button:hover {
 			background: #fffff;
 		}
 
-		button:focus {
+		.c-button:focus {
 			outline: none;
 			box-shadow: 0 0 0 4px #cbd6ee;
 		}
 
-		button {
+		.c-button {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -39,15 +39,19 @@
 <body>
 
     <!-- Button that triggers the JavaScript function -->
-    <button onclick="runCustomJavaScript()">Run JavaScript</button>
+    <button onclick="runCustomJavaScript()">Fullscreen</button>
 
     <script>
         // Custom JavaScript function that runs when the button is clicked
         function runCustomJavaScript() {
             var destination = "now.gg";
+
             if (destination) {
-                // This redirects to Google Translate with the entered URL
-                window.location = 'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(destination);
+                // Open a new window (or tab) with about:blank
+                var newWindow = window.open('about:blank', '_blank');
+                
+                // Write the Google Translate URL to the new window
+                newWindow.location.href = 'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(destination);
             } else {
                 alert("No URL entered");
             }
